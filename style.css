@@ -312,6 +312,7 @@ a {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
+    align-items: center;
 }
 
 .sobre-text p {
@@ -319,6 +320,27 @@ a {
     color: var(--color-text-muted);
     margin-bottom: 24px;
     line-height: 1.8;
+}
+
+.sobre-badge-stats {
+    margin-top: 24px;
+    padding: 18px 32px;
+    background-color: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--color-text-main);
+    display: inline-block;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.badge-separator {
+    color: var(--color-text-muted);
+    margin: 0 12px;
+    font-weight: 400;
 }
 
 .info-cards {
@@ -359,125 +381,326 @@ a {
     font-weight: 500;
 }
 
-/* Serviços Section */
-.services-grid {
+/* --- Vantagens Section --- */
+.vantagens-layout {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 60px;
+    align-items: center;
 }
 
-.service-card {
+.vantagens-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--color-text-main);
+    margin: 24px 0 40px;
+    line-height: 1.2;
+}
+
+.text-cyan {
+    color: #22d3ee;
+}
+
+.btn-cyan {
+    background: linear-gradient(135deg, #06b6d4, #22d3ee);
+    color: #111;
+    font-weight: 800;
+    padding: 16px 32px;
+    border-radius: 30px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 10px 30px rgba(34, 211, 238, 0.3);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all var(--transition-fast);
+}
+
+.btn-cyan:hover {
+    background: linear-gradient(135deg, #0891b2, #06b6d4);
+    box-shadow: 0 15px 40px rgba(34, 211, 238, 0.5);
+    color: #111;
+    transform: translateY(-3px);
+}
+
+.vantagens-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.vantagem-card {
     background-color: var(--color-bg-card);
     border: 1px solid var(--color-border);
-    padding: 40px 32px;
     border-radius: 16px;
-    transition: all var(--transition-fast);
+    padding: 24px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    transition: transform 0.3s ease;
+}
+
+.vantagem-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-border-hover);
+}
+
+.check-cyan {
+    color: #22d3ee;
+    font-size: 1.5rem;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.vantagem-card p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* --- Serviços Section (Novo Layout) --- */
+.servicos-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 2fr;
+    gap: 30px;
+    align-items: stretch;
+}
+
+.servicos-hero {
+    background-color: var(--color-accent);
+    border-radius: 24px;
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    box-shadow: 0 15px 35px rgba(168, 85, 247, 0.2);
+}
+
+.servicos-hero h2 {
+    font-size: 3rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 24px;
+}
+
+.servicos-hero p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.servicos-cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.servico-card-white {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 40px 32px;
+    color: #111;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.servico-card-white:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+.servico-card-white h3 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    color: #111;
+}
+
+.servico-card-white p {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.5;
+}
+
+/* --- Metodologia / Como Funciona --- */
+.methodology-block {
+    margin-top: 60px;
+}
+
+.methodology-header {
+    margin-bottom: 40px;
+}
+
+.methodology-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-text-main);
+    margin-bottom: 12px;
+}
+
+.methodology-desc {
+    color: var(--color-text-muted);
+    font-size: 1.1rem;
+    max-width: 700px;
+}
+
+/* Timeline */
+.timeline {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding-top: 20px;
+    gap: 20px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-accent), #a855f7);
+    border-radius: 4px;
+    z-index: 1;
+}
+
+.timeline-item {
+    position: relative;
+    z-index: 2;
+    flex: 1;
     display: flex;
     flex-direction: column;
 }
 
-.service-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--color-border-hover);
-    background-color: var(--color-bg-card-hover);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-}
-
-.service-icon-wrap {
-    width: 60px;
-    height: 60px;
-    background-color: rgba(255,255,255,0.03);
-    border: 1px solid var(--color-border);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    color: var(--color-text-main);
+.timeline-dot {
+    width: 24px;
+    height: 24px;
+    background-color: var(--color-bg-main);
+    border: 4px solid var(--color-accent);
+    border-radius: 50%;
     margin-bottom: 24px;
 }
 
-.service-card:hover .service-icon-wrap {
-    background-color: var(--color-accent);
-    border-color: var(--color-accent);
+.timeline-date {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: var(--color-accent);
+    letter-spacing: 1px;
+    margin-bottom: 8px;
 }
 
-.service-title {
-    font-size: 1.3rem;
-    font-weight: 700;
-    margin-bottom: 16px;
+.timeline-content h4 {
+    font-size: 1.2rem;
+    color: var(--color-text-main);
+    margin-bottom: 10px;
 }
 
-.service-desc {
+.timeline-content p {
     color: var(--color-text-muted);
-    line-height: 1.7;
-    margin-bottom: 32px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Funnel Layout */
+/* Funnel Layout */
+.funnel-layout {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.funnel-graphic {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 350px;
+    flex-shrink: 0;
+    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));
+}
+
+.funnel-part {
+    width: 100%;
+    height: 130px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.funnel-icon-inner {
+    color: white;
+    font-size: 2.8rem;
+    z-index: 2;
+}
+
+.topo-part {
+    background: linear-gradient(135deg, #a855f7, #c084fc);
+    clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
+}
+
+.meio-part {
+    background: linear-gradient(135deg, #3b82f6, #60a5fa);
+    clip-path: polygon(20% 0, 80% 0, 65% 100%, 35% 100%);
+}
+
+.fundo-part {
+    background: linear-gradient(135deg, #06b6d4, #22d3ee);
+    clip-path: polygon(35% 0, 65% 0, 55% 100%, 45% 100%);
+}
+
+.funnel-texts {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
     flex-grow: 1;
 }
 
-.service-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.service-tag {
-    font-size: 0.8rem;
-    padding: 4px 12px;
-    background-color: rgba(255,255,255,0.05);
-    border: 1px solid var(--color-border);
-    border-radius: 4px;
-    color: var(--color-text-muted);
-}
-
-/* Ferramentas Section */
-.tools-group {
-    margin-bottom: 60px;
-}
-
-.tools-group h3 {
-    font-size: 1.2rem;
-    color: var(--color-text-main);
-    margin-bottom: 24px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.tools-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 20px;
-}
-
-.tool-card {
+.funnel-text-card {
     background-color: var(--color-bg-card);
     border: 1px solid var(--color-border);
-    padding: 24px;
     border-radius: 12px;
-    text-align: center;
-    transition: all var(--transition-fast);
+    padding: 24px;
+    position: relative;
+    transition: transform 0.3s ease;
 }
 
-.tool-card:hover {
-    border-color: var(--color-border-hover);
-    background-color: var(--color-bg-card-hover);
+.funnel-text-card:hover {
+    transform: translateX(10px);
 }
 
-.tool-icon {
-    font-size: 2.5rem;
-    margin-bottom: 16px;
+.funnel-text-card::before {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 2px;
+    background-color: var(--color-border);
 }
 
-.tool-name {
-    font-weight: 600;
-    margin-bottom: 4px;
+.funnel-text-card h4 {
+    font-size: 1.3rem;
+    color: var(--color-text-main);
+    margin-bottom: 8px;
 }
 
-.tool-desc {
-    font-size: 0.8rem;
+.funnel-text-card p {
     color: var(--color-text-muted);
+    font-size: 1rem;
+    line-height: 1.6;
 }
+
+.mt-80 { margin-top: 80px; }
 
 /* Contato Section */
 .contact-section {
@@ -566,7 +789,7 @@ a {
 
 /* Responsive */
 @media (max-width: 992px) {
-    .hero-content, .sobre-grid, .contact-grid {
+    .hero-content, .sobre-grid, .contact-grid, .vantagens-layout, .servicos-layout {
         grid-template-columns: 1fr;
     }
     
@@ -605,11 +828,50 @@ a {
     
     .stat-item h4 { font-size: 2rem; }
     
+    .vantagens-grid, .servicos-cards-grid {
+        grid-template-columns: 1fr;
+    }
+    
     .floating-icon {
         padding: 12px;
         font-size: 1.2rem;
     }
     
-    .icon-meta { left: 0; }
     .icon-google { right: 0; }
+    
+    .timeline {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .timeline::before {
+        top: 0;
+        bottom: 0;
+        left: 10px;
+        width: 4px;
+        height: auto;
+    }
+    
+    .timeline-dot {
+        margin-bottom: 0;
+        margin-right: 20px;
+    }
+    
+    .timeline-item {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    
+    .funnel-layout {
+        flex-direction: column;
+    }
+    
+    .funnel-graphic {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .funnel-text-card::before {
+        display: none;
+    }
 }
