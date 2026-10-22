@@ -1,104 +1,139 @@
+/**
+ * Jeferson Barbosa - Gestor de Tráfego Pago
+ * Scripts de Interatividade: Menu Mobile Drawer, Header Scroll & Lead Form
+ */
+
 document.addEventListener('DOMContentLoaded', () => {
-    const track = document.querySelector('.carousel-track');
-    const prevBtn = document.querySelector('.prev-btn');
-    const nextBtn = document.querySelector('.next-btn');
-    const dotsContainer = document.querySelector('.carousel-dots');
+    // 1. Header scroll effect
+    const header = document.getElementById('header');
     
-    if (!track) return;
-    
-    const slides = Array.from(track.children);
-    
-    const setupCarousel = () => {
-        dotsContainer.innerHTML = '';
-        const slideWidth = slides[0].getBoundingClientRect().width;
-        const gap = 24;
-        
-        // Calculate maximum scrollable width
-        const maxScrollLeft = track.scrollWidth - track.clientWidth;
-        
-        // If there's nothing to scroll, no dots needed
-        if (maxScrollLeft <= 0) return;
-        
-        // Number of dots needed = ceil(maxScrollLeft / step) + 1
-        const numDots = Math.ceil(maxScrollLeft / (slideWidth + gap)) + 1;
-        
-        for (let i = 0; i < numDots; i++) {
-            const dot = document.createElement('button');
-            dot.classList.add('dot');
-            dot.setAttribute('aria-label', `Ir para a página ${i + 1}`);
-            
-            dot.addEventListener('click', () => {
-                // Ensure we don't scroll past the max
-                const scrollTo = Math.min((slideWidth + gap) * i, track.scrollWidth - track.clientWidth);
-                track.scrollTo({
-                    left: scrollTo,
-                    behavior: 'smooth'
-                });
-            });
-            
-            dotsContainer.appendChild(dot);
+    const handleScroll = () => {
+        if (window.scrollY > 20) {
+            header?.classList.add('scrolled');
+        } else {
+            header?.classList.remove('scrolled');
         }
-        
-        updateDotsActiveState();
     };
-    
-    const updateDotsActiveState = () => {
-        if (dotsContainer.children.length === 0) return;
-        
-        const slideWidth = slides[0].getBoundingClientRect().width;
-        const gap = 24;
-        const scrollPosition = track.scrollLeft;
-        const maxScrollLeft = track.scrollWidth - track.clientWidth;
-        
-        let activeIndex = Math.round(scrollPosition / (slideWidth + gap));
-        
-        // If reached the end, highlight the last dot
-        if (scrollPosition >= maxScrollLeft - 5) {
-            activeIndex = dotsContainer.children.length - 1;
-        }
-        
-        const dots = Array.from(dotsContainer.children);
-        dots.forEach((dot, index) => {
-            if (index === activeIndex) {
-                dot.classList.add('active');
-            } else {
-                dot.classList.remove('active');
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    // 2. Mobile Menu Drawer Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileCloseBtn = document.getElementById('mobileCloseBtn');
+    const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+    const mobileDrawerLinks = document.querySelectorAll('.mobile-drawer-link');
+
+    const openDrawer = () => {
+        mobileDrawer?.classList.add('active');
+        mobileNavOverlay?.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    };
+
+    const closeDrawer = () => {
+        mobileDrawer?.classList.remove('active');
+        mobileNavOverlay?.classList.remove('active');
+        document.body.style.overflow = '';
+    };
+
+    if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', openDrawer);
+    }
+
+    if (mobileCloseBtn) {
+        mobileCloseBtn.addEventListener('click', closeDrawer);
+    }
+
+    if (mobileNavOverlay) {
+        mobileNavOverlay.addEventListener('click', closeDrawer);
+    }
+
+    mobileDrawerLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            closeDrawer();
+        });
+    });
+
+    // 3. Smooth scroll handling for internal anchor links with close drawer
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                e.preventDefault();
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
             }
         });
-    };
-    
-    // Initial setup
-    setupCarousel();
-    
-    // Ensure it updates when images load or window resizes
-    window.addEventListener('load', setupCarousel);
-    window.addEventListener('resize', setupCarousel);
-    
-    // Update active dot on scroll
-    track.addEventListener('scroll', updateDotsActiveState);
-    
-    // Navigation Buttons
-    if (nextBtn && prevBtn) {
-        nextBtn.addEventListener('click', () => {
-            const slideWidth = slides[0].getBoundingClientRect().width;
-            const gap = 24;
-            const scrollPosition = track.scrollLeft;
-            
-            track.scrollTo({
-                left: scrollPosition + slideWidth + gap,
-                behavior: 'smooth'
-            });
+    });
+
+    // 4. Máscara amigável para telefone (00) 00000-0000 ou (00) 0000-0000
+    const telefoneInput = document.getElementById('leadTelefone');
+    if (telefoneInput) {
+        telefoneInput.addEventListener('input', (e) => {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length > 11) value = value.slice(0, 11);
+
+            if (value.length > 10) {
+                // Formato celular: (XX) XXXXX-XXXX
+                e.target.value = value.replace(/^(\d{2})(\d{5})(\d{4})$/, '($1) $2-$3');
+            } else if (value.length > 5) {
+                // Formato intermediário ou fixo
+                e.target.value = value.replace(/^(\d{2})(\d{4})(\d{0,4})$/, '($1) $2-$3');
+            } else if (value.length > 2) {
+                e.target.value = value.replace(/^(\d{2})(\d{0,5})$/, '($1) $2');
+            } else {
+                e.target.value = value;
+            }
         });
-        
-        prevBtn.addEventListener('click', () => {
-            const slideWidth = slides[0].getBoundingClientRect().width;
-            const gap = 24;
-            const scrollPosition = track.scrollLeft;
-            
-            track.scrollTo({
-                left: scrollPosition - slideWidth - gap,
-                behavior: 'smooth'
+    }
+
+    // 5. Tratamento e Submissão do Formulário de Diagnóstico
+    const leadForm = document.getElementById('leadForm');
+    if (leadForm) {
+        leadForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const nome = document.getElementById('leadNome')?.value.trim();
+            const telefone = document.getElementById('leadTelefone')?.value.trim();
+            const empresa = document.getElementById('leadEmpresa')?.value.trim();
+            const segmento = document.getElementById('leadSegmento')?.value.trim();
+            const cidade = document.getElementById('leadCidade')?.value.trim();
+            const faturamento = document.getElementById('leadFaturamento')?.value;
+
+            const leadData = {
+                nome,
+                telefone,
+                empresa,
+                segmento,
+                cidade,
+                faturamento,
+                submittedAt: new Date().toISOString()
+            };
+
+            // Salva os dados para serem usados na página de obrigado
+            try {
+                sessionStorage.setItem('lead_data', JSON.stringify(leadData));
+            } catch (err) {
+                console.warn('Não foi possível armazenar lead_data em sessionStorage', err);
+            }
+
+            // Dispara evento no dataLayer para Google Tag Manager
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                event: 'lead_form_submitted',
+                lead_empresa: empresa,
+                lead_segmento: segmento,
+                lead_faturamento: faturamento
             });
+
+            // Redireciona para a página de agradecimento
+            window.location.href = 'obrigado.html';
         });
     }
 });

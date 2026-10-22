@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-ML8SGLQ7');</script>
+    <!-- End Google Tag Manager -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obrigado! Solicitação Recebida — Jeferson Barbosa</title>
+    <meta name="description" content="Obrigado pelo contato! Recebemos sua solicitação de diagnóstico e entraremos em contato em breve.">
+    
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-ML8SGLQ7"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Header Simples e Elegante -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="navbar">
+                <a href="index.html#inicio" class="logo" aria-label="Jeferson Barbosa - Página Inicial">
+                    <div class="logo-text-wrapper">
+                        <span class="logo-name">Jeferson Barbosa</span>
+                        <span class="logo-badge">Gestor de Tráfego</span>
+                    </div>
+                </a>
+                
+                <div class="header-action">
+                    <a href="index.html" class="btn btn-secondary">
+                        <i class="fa-solid fa-arrow-left"></i> Voltar ao site
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal de Agradecimento -->
+    <main class="thankyou-wrapper">
+        <div class="container">
+            <div class="thankyou-card mx-auto">
+                <div class="thankyou-icon">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+
+                <span class="section-tag">Solicitação Confirmada</span>
+                <h1 class="thankyou-title" id="thankyouTitle">Obrigado! Solicitação enviada.</h1>
+                
+                <p class="thankyou-message" id="thankyouMsg">
+                    Recebemos os dados do seu negócio. Vou analisar o cenário do seu segmento e entrar em contato pelo WhatsApp/telefone para conversarmos sobre a estratégia ideal para acelerar seus resultados.
+                </p>
+
+                <!-- Resumo dos dados preenchidos pelo lead -->
+                <div class="thankyou-lead-info" id="leadSummaryBox">
+                    <div class="thankyou-lead-title"><i class="fa-solid fa-circle-info"></i> Resumo da solicitação</div>
+                    <div class="thankyou-lead-summary" id="leadSummaryContent"></div>
+                </div>
+
+                <!-- Ações para o lead -->
+                <div class="thankyou-actions">
+                    <a href="https://api.whatsapp.com/send?phone=5575998911748" id="whatsappDirectBtn" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="font-size: 1.05rem; padding: 18px 24px;">
+                        Adiantar atendimento pelo WhatsApp <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                    
+                    <a href="index.html" class="btn btn-secondary">
+                        Voltar à página inicial
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo-text-wrapper">
+                    <span class="logo-name">Jeferson Barbosa</span>
+                    <span class="logo-badge">Gestor de Tráfego Pago</span>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/mr.barbosa20/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/jefferson-barbosa-274703274/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://api.whatsapp.com/send?phone=5575998911748" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Jeferson Barbosa - Gestor de Tráfego Pago. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script para carregar resumo e personalizar WhatsApp -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            try {
+                const leadDataJson = sessionStorage.getItem('lead_data');
+                if (leadDataJson) {
+                    const lead = JSON.parse(leadDataJson);
+                    
+                    if (lead.nome) {
+                        const titleEl = document.getElementById('thankyouTitle');
+                        if (titleEl) {
+                            titleEl.textContent = `Obrigado, ${lead.nome.split(' ')[0]}!`;
+                        }
+                    }
+
+                    const summaryBox = document.getElementById('leadSummaryBox');
+                    const summaryContent = document.getElementById('leadSummaryContent');
+                    
+                    if (summaryBox && summaryContent) {
+                        summaryBox.classList.add('show');
+                        summaryContent.innerHTML = `
+                            <strong>Empresa:</strong> ${lead.empresa || '-'}<br>
+                            <strong>Segmento:</strong> ${lead.segmento || '-'}<br>
+                            <strong>Cidade/Estado:</strong> ${lead.cidade || '-'}<br>
+                            <strong>Faturamento médio:</strong> ${lead.faturamento || '-'}
+                        `;
+                    }
+
+                    // Atualiza o link do WhatsApp para já levar a mensagem pronta
+                    const waBtn = document.getElementById('whatsappDirectBtn');
+                    if (waBtn) {
+                        const msg = `Olá, Jeferson! Acabei de enviar o formulário no seu site.\n\n*Nome:* ${lead.nome}\n*Empresa:* ${lead.empresa}\n*Segmento:* ${lead.segmento}\n*Cidade/Estado:* ${lead.cidade}\n*Faturamento médio:* ${lead.faturamento}\n\nGostaria de adiantar meu atendimento para alinharmos a estratégia de tráfego.`;
+                        waBtn.href = `https://api.whatsapp.com/send?phone=5575998911748&text=${encodeURIComponent(msg)}`;
+                    }
+                }
+            } catch (e) {
+                console.error('Erro ao ler lead_data', e);
+            }
+        });
+    </script>
+</body>
+</html>

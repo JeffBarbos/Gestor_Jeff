@@ -1,47 +1,96 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-ML8SGLQ7');</script>
+    <!-- End Google Tag Manager -->
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jeferson Barbosa - Gestor de Tráfego Pago</title>
+    <title>Jeferson Barbosa — Gestor de Tráfego Pago & Marketing Digital</title>
+    <meta name="description" content="Gestor de Tráfego Pago especializado em aquisição de clientes, campanhas de performance e crescimento de negócios no digital.">
     
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome -->
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-ML8SGLQ7"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
-    <!-- Header Section -->
-    <header class="header">
+    <!-- Header / Barra de Navegação -->
+    <header class="header" id="header">
         <div class="container">
             <div class="navbar">
-                <a href="#" class="logo" style="font-size: 1.8rem; font-weight: 800; color: var(--color-text-main); letter-spacing: -1px;">
-                    <span style="color: var(--color-text-muted);">&lt;</span>J.Barbosa<span style="color: var(--color-accent);">/&gt;</span>
+                <!-- Logotipo Editorial Profissional -->
+                <a href="#inicio" class="logo" aria-label="Jeferson Barbosa - Página Inicial">
+                    <div class="logo-text-wrapper">
+                        <span class="logo-name">Jeferson Barbosa</span>
+                        <span class="logo-badge">Gestor de Tráfego</span>
+                    </div>
                 </a>
                 
-                <nav class="nav-links">
+                <nav class="nav-links" aria-label="Navegação principal">
                     <a href="#inicio" class="nav-link">Início</a>
                     <a href="#sobre" class="nav-link">Sobre</a>
+                    <a href="#vantagens" class="nav-link">Vantagens</a>
                     <a href="#servicos" class="nav-link">Serviços</a>
                     <a href="#comofunciona" class="nav-link">Como Funciona</a>
+                    <a href="#diagnostico" class="nav-link">Diagnóstico</a>
                     <a href="#contato" class="nav-link">Contato</a>
                 </nav>
 
-                <a href="https://api.whatsapp.com/send?phone=5575998911748&text=Ol%C3%A1%2C%20Jeferson%21%20Gostaria%20de%20entender%20como%20o%20tr%C3%A1fego%20pago%20pode%20ajudar%20meu%20neg%C3%B3cio." class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-                    Falar comigo <i class="fa-brands fa-whatsapp"></i>
-                </a>
-                
-                <button class="mobile-menu-btn">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
+                <div class="header-action">
+                    <a href="https://api.whatsapp.com/send?phone=5575998911748&text=Ol%C3%A1%2C%20Jeferson%21%20Gostaria%20de%20entender%20como%20o%20tr%C3%A1fego%20pago%20pode%20ajudar%20meu%20neg%C3%B3cio." class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                        Falar comigo <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                    
+                    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menu de navegação">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </header>
+
+    <!-- Menu Mobile Drawer -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+    <div class="mobile-drawer" id="mobileDrawer">
+        <div class="mobile-drawer-header">
+            <div class="logo-text-wrapper">
+                <span class="logo-name">Jeferson Barbosa</span>
+                <span class="logo-badge">Gestor de Tráfego</span>
+            </div>
+            <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Fechar menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <nav class="mobile-drawer-links">
+            <a href="#inicio" class="mobile-drawer-link">Início</a>
+            <a href="#sobre" class="mobile-drawer-link">Sobre</a>
+            <a href="#vantagens" class="mobile-drawer-link">Vantagens</a>
+            <a href="#servicos" class="mobile-drawer-link">Serviços</a>
+            <a href="#comofunciona" class="mobile-drawer-link">Como Funciona</a>
+            <a href="#diagnostico" class="mobile-drawer-link">Diagnóstico</a>
+            <a href="#contato" class="mobile-drawer-link">Contato</a>
+        </nav>
+        <a href="https://api.whatsapp.com/send?phone=5575998911748&text=Ol%C3%A1%2C%20Jeferson%21%20Gostaria%20de%20entender%20como%20o%20tr%C3%A1fego%20pago%20pode%20ajudar%20meu%20neg%C3%B3cio." class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="width: 100%;">
+            Falar comigo <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
 
     <!-- 1. Hero / Início -->
     <section class="hero" id="inicio">
@@ -49,8 +98,13 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <div class="hero-badge">
+                        <span class="status-indicator">
+                            <span class="status-ping"></span>
+                            <span class="status-dot"></span>
+                        </span>
                         Disponível para novos projetos
                     </div>
+
                     <p class="hero-greeting">Olá, eu sou</p>
                     <h1 class="hero-title">Jeferson Barbosa</h1>
                     <h2 class="hero-subtitle">Gestor de Tráfego Pago</h2>
@@ -59,9 +113,14 @@
                         Ajudo empresas a transformarem investimento em campanhas que geram leads, oportunidades comerciais e crescimento previsível. Trabalho com estratégia, criativos, análise de dados e otimização constante para melhorar os resultados de cada projeto.
                     </p>
                     
-                    <a href="https://api.whatsapp.com/send?phone=5575998911748&text=Ol%C3%A1%2C%20Jeferson%21%20Tenho%20interesse%20em%20estruturar%20campanhas%20para%20gerar%20leads." class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-                        Falar comigo <i class="fa-brands fa-whatsapp"></i>
-                    </a>
+                    <div class="hero-cta-group">
+                        <a href="https://api.whatsapp.com/send?phone=5575998911748&text=Ol%C3%A1%2C%20Jeferson%21%20Tenho%20interesse%20em%20estruturar%20campanhas%20para%20gerar%20leads." class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                            Falar comigo <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                        <a href="#servicos" class="btn btn-secondary">
+                            Ver soluções <i class="fa-solid fa-arrow-down"></i>
+                        </a>
+                    </div>
 
                     <div class="hero-stats">
                         <div class="stat-item">
@@ -80,35 +139,47 @@
                 </div>
 
                 <div class="hero-image-container">
-                    <div class="hero-image-bg"></div>
-                    <img src="./assets/img/perfil.jpeg" alt="Jeferson Barbosa - Gestor de Tráfego" class="hero-image" onerror="this.src='https://images.unsplash.com/photo-1556157382-97eda2d62296?w=500&auto=format&fit=crop&q=80'">
-                    
-                    <div class="floating-icon icon-meta"><i class="fa-brands fa-meta"></i></div>
-                    <div class="floating-icon icon-google"><i class="fa-brands fa-google"></i></div>
-                    <div class="floating-icon icon-tiktok"><i class="fa-brands fa-tiktok"></i></div>
-                    <div class="floating-icon icon-gtm"><i class="fa-solid fa-tag"></i></div>
+                    <div class="hero-image-frame">
+                        <img src="./assets/img/perfil.jpeg" alt="Jeferson Barbosa - Gestor de Tráfego" class="hero-image" onerror="this.src='https://images.unsplash.com/photo-1556157382-97eda2d62296?w=500&auto=format&fit=crop&q=80'">
+                        
+                        <!-- Badges sutis de Mídia Paga -->
+                        <div class="platform-pill pill-meta">
+                            <i class="fa-brands fa-meta"></i>
+                            <span>Meta Ads</span>
+                        </div>
+                        <div class="platform-pill pill-google">
+                            <i class="fa-brands fa-google"></i>
+                            <span>Google Ads</span>
+                        </div>
+                        <div class="platform-pill pill-tiktok">
+                            <i class="fa-brands fa-tiktok"></i>
+                            <span>TikTok Ads</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- 2. Sobre mim -->
-    <section class="section-padding" id="sobre">
+    <section class="section-padding sobre-section" id="sobre">
         <div class="container">
             <div class="text-center">
                 <span class="section-tag">Sobre mim</span>
                 <h2 class="section-title">Conheça o profissional por trás das campanhas</h2>
-                <div class="section-subtitle mx-auto"></div>
+                <p class="section-subtitle mx-auto">Visão estratégica e foco contínuo na geração de oportunidades para o seu negócio.</p>
             </div>
 
             <div class="sobre-grid">
-                <div class="sobre-image-container">
-                    <img src="./assets/img/sobre-foto.jpg" alt="Jeferson Estudando" style="width: 100%; height: 100%; max-height: 600px; object-fit: cover; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                <div class="sobre-image-wrapper">
+                    <div class="sobre-image-card">
+                        <img src="./assets/img/sobre-foto.jpg" alt="Jeferson Barbosa atuando em estratégias digitais">
+                    </div>
                 </div>
 
                 <div class="sobre-content">
                     <div class="sobre-text">
-                        <p>
+                        <p class="sobre-lead">
                             Sou Gestor de Tráfego Pago e desenvolvo estratégias de aquisição para negócios que buscam crescer através da internet.
                         </p>
                         <p>
@@ -119,50 +190,66 @@
                         </p>
 
                         <div class="sobre-badge-stats">
-                            +300Mil Gerenciados em anúncios
+                            <i class="fa-solid fa-chart-line"></i>
+                            <span>+300Mil Gerenciados em anúncios</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
     <!-- 2.5 Vantagens -->
-    <section class="section-padding" id="vantagens">
+    <section class="section-padding vantagens-section" id="vantagens">
         <div class="container">
             <div class="vantagens-layout">
-                <!-- Esquerda -->
+                <!-- Coluna de Texto e Chamada -->
                 <div class="vantagens-text-block">
                     <span class="section-tag">Vantagens</span>
                     <h2 class="vantagens-title">
-                        Minha estratégia de tráfego é a <span class="text-cyan">solução ideal</span> para você que...
+                        Minha estratégia de tráfego é a <span class="vantagens-highlight">solução ideal</span> para você que...
                     </h2>
-                    <a href="#contato" class="btn btn-cyan">QUERO ATRAIR MAIS CLIENTES <i class="fa-solid fa-arrow-up-right-from-square" style="margin-left: 8px;"></i></a>
+                    <a href="#diagnostico" class="btn btn-primary">
+                        QUERO ATRAIR MAIS CLIENTES <i class="fa-solid fa-arrow-right"></i>
+                    </a>
                 </div>
                 
-                <!-- Direita (Cards) -->
+                <!-- Cards de Vantagens -->
                 <div class="vantagens-grid">
                     <div class="vantagem-card">
-                        <i class="fa-solid fa-circle-check check-cyan"></i>
+                        <div class="vantagem-icon-wrap">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
                         <p>Deseja ver um retorno claro e mensurável do seu investimento em marketing.</p>
                     </div>
                     <div class="vantagem-card">
-                        <i class="fa-solid fa-circle-check check-cyan"></i>
+                        <div class="vantagem-icon-wrap">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
                         <p>Valoriza a transparência e deseja entender exatamente como suas campanhas estão performando.</p>
                     </div>
                     <div class="vantagem-card">
-                        <i class="fa-solid fa-circle-check check-cyan"></i>
+                        <div class="vantagem-icon-wrap">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
                         <p>Está cansado de campanhas genéricas que não atendem às especificidades do seu mercado.</p>
                     </div>
                     <div class="vantagem-card">
-                        <i class="fa-solid fa-circle-check check-cyan"></i>
+                        <div class="vantagem-icon-wrap">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
                         <p>Busca um parceiro estratégico, não apenas um prestador de serviços.</p>
                     </div>
                     <div class="vantagem-card">
-                        <i class="fa-solid fa-circle-check check-cyan"></i>
+                        <div class="vantagem-icon-wrap">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
                         <p>Precisa de mais do que apenas visitas ao site, buscando conversões reais que aumentem o faturamento.</p>
                     </div>
                     <div class="vantagem-card">
-                        <i class="fa-solid fa-circle-check check-cyan"></i>
+                        <div class="vantagem-icon-wrap">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
                         <p>Quer garantir que seu marketing digital seja sustentável e continue a crescer sem aumentar proporcionalmente os custos.</p>
                     </div>
                 </div>
@@ -171,56 +258,66 @@
     </section>
 
     <!-- 3. Serviços -->
-    <section class="section-padding" id="servicos">
+    <section class="section-padding servicos-section" id="servicos">
         <div class="container">
-            <div class="servicos-layout">
-                
-                <!-- Bloco Roxo (Esquerda) -->
-                <div class="servicos-hero">
-                    <h2>Serviços ofertados</h2>
-                    <p><strong>Soluções digitais</strong> para fortalecer sua presença online, atrair novos clientes e aumentar suas oportunidades de venda.</p>
+            <div class="servicos-intro-card">
+                <div class="servicos-intro-text">
+                    <span class="section-tag">Serviços ofertados</span>
+                    <h2>Soluções completas para acelerar sua aquisição</h2>
+                    <p>Soluções digitais para fortalecer sua presença online, atrair novos clientes e aumentar suas oportunidades de venda.</p>
                 </div>
-                
-                <!-- Cards Brancos (Direita) -->
-                <div class="servicos-cards-grid">
-                    
-                    <!-- Card 1 -->
-                    <div class="servico-card-white">
-                        <h3>Criativos para Anúncios</h3>
-                        <p>Criação e direção de criativos pensados para chamar atenção, gerar cliques e aumentar a conversão</p>
-                    </div>
+                <a href="#contato" class="btn btn-secondary">
+                    Consultar disponibilidade <i class="fa-solid fa-calendar-check"></i>
+                </a>
+            </div>
 
-                    <!-- Card 2 -->
-                    <div class="servico-card-white">
-                        <h3>Tráfego Pago</h3>
-                        <p>Campanhas estratégicas para alcançar o público certo e gerar mais leads e vendas. No Meta, Google & tiktok ads</p>
+            <!-- Cards de Serviços com Acabamento Editorial -->
+            <div class="servicos-grid">
+                <!-- Card 1 -->
+                <div class="servico-card">
+                    <div class="servico-icon-container">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
                     </div>
-
-                    <!-- Card 3 -->
-                    <div class="servico-card-white">
-                        <h3>Sites / E-commerce</h3>
-                        <p>Sites rápidos e responsivos, preparados para transformar visitantes em clientes.</p>
-                    </div>
-
-                    <!-- Card 4 -->
-                    <div class="servico-card-white">
-                        <h3>IA para pré-atendimento</h3>
-                        <p>Atendimento automatizado para responder dúvidas, qualificar contatos e agilizar sua equipe.</p>
-                    </div>
-
+                    <h3>Criativos para Anúncios</h3>
+                    <p>Criação e direção de criativos pensados para chamar atenção, gerar cliques e aumentar a conversão.</p>
                 </div>
 
+                <!-- Card 2 -->
+                <div class="servico-card">
+                    <div class="servico-icon-container">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <h3>Tráfego Pago</h3>
+                    <p>Campanhas estratégicas para alcançar o público certo e gerar mais leads e vendas. No Meta, Google & tiktok ads.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="servico-card">
+                    <div class="servico-icon-container">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <h3>Sites / E-commerce</h3>
+                    <p>Sites rápidos e responsivos, preparados para transformar visitantes em clientes.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="servico-card">
+                    <div class="servico-icon-container">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <h3>IA para pré-atendimento</h3>
+                    <p>Atendimento automatizado para responder dúvidas, qualificar contatos e agilizar sua equipe.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- 4. Como Funciona -->
-    <section class="section-padding" id="comofunciona">
+    <!-- 4. Como Funciona / Metodologia -->
+    <section class="section-padding metodologia-section" id="comofunciona">
         <div class="container">
             <div class="text-center">
                 <span class="section-tag">Metodologia</span>
                 <h2 class="section-title">Como vai funcionar na prática</h2>
-                <div class="section-subtitle mx-auto"></div>
             </div>
 
             <!-- Ciclo de Implementação -->
@@ -231,41 +328,125 @@
                 </div>
                 
                 <div class="timeline">
+                    <!-- Fase 1 -->
                     <div class="timeline-item">
-                        <div class="timeline-dot"></div>
+                        <span class="timeline-phase-badge">Fase 01</span>
                         <div class="timeline-content">
-                            <span class="timeline-date">Fase 1</span>
                             <h4>Estratégia personalizada</h4>
                             <p>Planejamento baseado no cenário do negócio</p>
                         </div>
                     </div>
+
+                    <!-- Fase 2 -->
                     <div class="timeline-item">
-                        <div class="timeline-dot"></div>
+                        <span class="timeline-phase-badge">Fase 02</span>
                         <div class="timeline-content">
-                            <span class="timeline-date">Fase 2</span>
                             <h4>Integrações e Estruturação</h4>
                             <p>Conectar sistemas, criar estrutura e campanhas iniciais</p>
                         </div>
                     </div>
+
+                    <!-- Fase 3 -->
                     <div class="timeline-item">
-                        <div class="timeline-dot"></div>
+                        <span class="timeline-phase-badge">Fase 03</span>
                         <div class="timeline-content">
-                            <span class="timeline-date">Fase 3</span>
                             <h4>Testes e Validação</h4>
                             <p>Garantir performance e estabilidade</p>
                         </div>
                     </div>
+
+                    <!-- Fase 4 -->
                     <div class="timeline-item">
-                        <div class="timeline-dot"></div>
+                        <span class="timeline-phase-badge">Fase 04</span>
                         <div class="timeline-content">
-                            <span class="timeline-date">Fase 4</span>
                             <h4>Monitoramento e Otimização</h4>
                             <p>Medir resultados e ajustar os próximos passos</p>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
+    <!-- 4.5 Diagnóstico Estratégico (Formulário) -->
+    <section class="section-padding diagnostico-section" id="diagnostico">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-tag">Diagnóstico Estratégico</span>
+                <h2 class="section-title">Solicite uma análise para o seu negócio</h2>
+                <p class="section-subtitle mx-auto">
+                    Preencha o formulário abaixo para avaliarmos o momento da sua empresa e definirmos a melhor estratégia de tráfego pago para o seu crescimento.
+                </p>
+            </div>
+
+            <div class="diagnostico-card">
+                <form id="leadForm" class="lead-form">
+                    <div class="form-grid">
+                        <!-- 1. Nome -->
+                        <div class="form-group">
+                            <label for="leadNome" class="form-label">
+                                Nome <span class="required">*</span>
+                            </label>
+                            <input type="text" id="leadNome" name="nome" class="form-control" placeholder="Seu nome completo" required autocomplete="name">
+                        </div>
+
+                        <!-- 2. Telefone -->
+                        <div class="form-group">
+                            <label for="leadTelefone" class="form-label">
+                                Telefone / WhatsApp <span class="required">*</span>
+                            </label>
+                            <input type="tel" id="leadTelefone" name="telefone" class="form-control" placeholder="(00) 00000-0000" required autocomplete="tel">
+                        </div>
+
+                        <!-- 3. Nome da empresa -->
+                        <div class="form-group">
+                            <label for="leadEmpresa" class="form-label">
+                                Nome da empresa <span class="required">*</span>
+                            </label>
+                            <input type="text" id="leadEmpresa" name="empresa" class="form-control" placeholder="Nome do seu negócio ou empresa" required autocomplete="organization">
+                        </div>
+
+                        <!-- 4. Segmento da empresa -->
+                        <div class="form-group">
+                            <label for="leadSegmento" class="form-label">
+                                Segmento da empresa <span class="required">*</span>
+                            </label>
+                            <input type="text" id="leadSegmento" name="segmento" class="form-control" placeholder="Clinica, Loja de roupas, Marcenaria" required>
+                        </div>
+
+                        <!-- 5. Cidade/Es -->
+                        <div class="form-group">
+                            <label for="leadCidade" class="form-label">
+                                Cidade/Estado <span class="required">*</span>
+                            </label>
+                            <input type="text" id="leadCidade" name="cidade" class="form-control" placeholder="Ex: Salvador/BA ou Feira de Santana/BA" required>
+                        </div>
+
+                        <!-- 6. Faturamento médio -->
+                        <div class="form-group">
+                            <label for="leadFaturamento" class="form-label">
+                                Faturamento médio <span class="required">*</span>
+                            </label>
+                            <select id="leadFaturamento" name="faturamento" class="form-control" required>
+                                <option value="" disabled selected>Selecione a faixa de faturamento</option>
+                                <option value="5.000 a 10.000">5.000 a 10.000</option>
+                                <option value="10.001 a 15.000">10.001 a 15.000</option>
+                                <option value="15.001 a 25.000">15.001 a 25.000</option>
+                                <option value="Mais de 25.001">Mais de 25.001</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-footer">
+                        <button type="submit" class="btn btn-primary form-submit-btn">
+                            Enviar e solicitar análise estratégica <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                        <p class="form-disclaimer">
+                            <i class="fa-solid fa-lock"></i> Seus dados estão seguros e serão utilizados exclusivamente para contato profissional.
+                        </p>
+                    </div>
+                </form>
+            </div>
         </div>
     </section>
 
@@ -281,44 +462,52 @@
             </div>
 
             <div class="contact-grid">
+                <!-- Informações e Redes -->
                 <div class="contact-cards">
                     <div class="contact-card">
-                        <div class="contact-card-icon"><i class="fa-solid fa-phone"></i></div>
+                        <div class="contact-card-icon">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
                         <div>
                             <h4>Telefone Comercial</h4>
                             <p>(75) 998911748</p>
                         </div>
                     </div>
+
                     <div class="contact-card">
-                        <div class="contact-card-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <div class="contact-card-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
                         <div>
                             <h4>Localização</h4>
                             <p>Ipirá, Bahia, Brasil</p>
                         </div>
                     </div>
+
                     <div>
-                        <h4 style="color: var(--color-text-muted); font-size: 0.9rem; margin-bottom: 8px;">Redes Sociais</h4>
+                        <div class="social-section-title">Redes Sociais</div>
                         <div class="social-cards">
-                            <a href="https://www.instagram.com/mr.barbosa20/" target="_blank" class="social-card" aria-label="Instagram">
+                            <a href="https://www.instagram.com/mr.barbosa20/" target="_blank" rel="noopener noreferrer" class="social-card" aria-label="Instagram de Jeferson Barbosa">
                                 <i class="fa-brands fa-instagram"></i>
                             </a>
-                            <a href="https://www.linkedin.com/in/jefferson-barbosa-274703274/" target="_blank" class="social-card" aria-label="LinkedIn">
+                            <a href="https://www.linkedin.com/in/jefferson-barbosa-274703274/" target="_blank" rel="noopener noreferrer" class="social-card" aria-label="LinkedIn de Jeferson Barbosa">
                                 <i class="fa-brands fa-linkedin-in"></i>
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="contact-cta">
-                    <div style="background-color: var(--color-bg-card); padding: 40px; border-radius: 16px; border: 1px solid var(--color-border); text-align: center;">
-                        <i class="fa-brands fa-whatsapp" style="font-size: 4rem; color: var(--color-accent); margin-bottom: 20px;"></i>
-                        <h3 style="font-size: 1.5rem; margin-bottom: 16px;">Pronto para escalar seus resultados?</h3>
-                        <p style="color: var(--color-text-muted); margin-bottom: 32px;">O WhatsApp é o canal mais rápido para conversarmos sobre o seu projeto.</p>
-                        
-                        <a href="https://api.whatsapp.com/send?phone=5575998911748&text=Ol%C3%A1%2C%20Jeferson%21%20Gostaria%20de%20entender%20como%20o%20tr%C3%A1fego%20pago%20pode%20ajudar%20meu%20neg%C3%B3cio." class="btn btn-primary" style="width: 100%; font-size: 1.1rem; padding: 20px;" target="_blank" rel="noopener noreferrer">
-                            Falar pelo WhatsApp <i class="fa-brands fa-whatsapp"></i>
-                        </a>
+                <!-- Caixa CTA do WhatsApp -->
+                <div class="contact-cta-box">
+                    <div class="whatsapp-hero-icon">
+                        <i class="fa-brands fa-whatsapp"></i>
                     </div>
+                    <h3>Pronto para escalar seus resultados?</h3>
+                    <p>O WhatsApp é o canal mais rápido para conversarmos sobre o seu projeto.</p>
+                    
+                    <a href="https://api.whatsapp.com/send?phone=5575998911748&text=Ol%C3%A1%2C%20Jeferson%21%20Gostaria%20de%20entender%20como%20o%20tr%C3%A1fego%20pago%20pode%20ajudar%20meu%20neg%C3%B3cio." class="btn btn-primary btn-whatsapp-full" target="_blank" rel="noopener noreferrer">
+                        Falar pelo WhatsApp <i class="fa-brands fa-whatsapp"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -328,10 +517,14 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
+                <div class="logo-text-wrapper">
+                    <span class="logo-name">Jeferson Barbosa</span>
+                    <span class="logo-badge">Gestor de Tráfego Pago</span>
+                </div>
                 <div class="footer-socials">
-                    <a href="https://www.instagram.com/mr.barbosa20/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/in/jefferson-barbosa-274703274/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="https://api.whatsapp.com/send?phone=5575998911748&text=Ol%C3%A1%2C%20Jeferson%21%20Gostaria%20de%20entender%20como%20o%20tr%C3%A1fego%20pago%20pode%20ajudar%20meu%20neg%C3%B3cio." target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://www.instagram.com/mr.barbosa20/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/jefferson-barbosa-274703274/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://api.whatsapp.com/send?phone=5575998911748&text=Ol%C3%A1%2C%20Jeferson%21%20Gostaria%20de%20entender%20como%20o%20tr%C3%A1fego%20pago%20pode%20ajudar%20meu%20neg%C3%B3cio." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -340,7 +533,7 @@
         </div>
     </footer>
 
-    <!-- JS -->
+    <!-- JavaScript Interativo -->
     <script src="./assets/js/main.js"></script>
 </body>
 </html>
