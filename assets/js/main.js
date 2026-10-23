@@ -136,4 +136,19 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.href = 'obrigado.html';
         });
     }
+
+    // 6. Rastreamento e DataLayer para Cliques em Links de WhatsApp
+    document.querySelectorAll('a[href*="whatsapp.com"], a[href*="api.whatsapp.com"], .btn-whatsapp').forEach(waLink => {
+        waLink.addEventListener('click', function(e) {
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                event: 'whatsapp_click',
+                click_url: this.href,
+                click_id: this.id || '',
+                click_class: this.className || '',
+                click_text: this.innerText ? this.innerText.trim() : '',
+                click_location: this.getAttribute('data-location') || 'geral'
+            });
+        });
+    });
 });

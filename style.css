@@ -73,6 +73,11 @@ a {
     transition: var(--transition);
 }
 
+/* Rastreamento GTM: garante que o target do clique seja sempre a tag <a> ou <button> e nunca elementos internos como <i> ou <span> */
+a *, button * {
+    pointer-events: none;
+}
+
 img {
     max-width: 100%;
     height: auto;

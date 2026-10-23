@@ -74,7 +74,7 @@
 
                 <!-- Ações para o lead -->
                 <div class="thankyou-actions">
-                    <a href="https://api.whatsapp.com/send?phone=5575998911748" id="whatsappDirectBtn" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="font-size: 1.05rem; padding: 18px 24px;">
+                    <a href="https://api.whatsapp.com/send?phone=5575998911748" id="btn-whatsapp-obrigado" class="btn btn-primary btn-whatsapp" data-track="whatsapp" data-location="obrigado" target="_blank" rel="noopener noreferrer" style="font-size: 1.05rem; padding: 18px 24px;">
                         Adiantar atendimento pelo WhatsApp <i class="fa-brands fa-whatsapp"></i>
                     </a>
                     
@@ -97,7 +97,7 @@
                 <div class="footer-socials">
                     <a href="https://www.instagram.com/mr.barbosa20/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                     <a href="https://www.linkedin.com/in/jefferson-barbosa-274703274/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="https://api.whatsapp.com/send?phone=5575998911748" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://api.whatsapp.com/send?phone=5575998911748" id="btn-whatsapp-obrigado-footer" class="social-link-whatsapp btn-whatsapp" data-track="whatsapp" data-location="footer" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -135,7 +135,7 @@
                     }
 
                     // Atualiza o link do WhatsApp para já levar a mensagem pronta
-                    const waBtn = document.getElementById('whatsappDirectBtn');
+                    const waBtn = document.getElementById('btn-whatsapp-obrigado');
                     if (waBtn) {
                         const msg = `Olá, Jeferson! Acabei de enviar o formulário no seu site.\n\n*Nome:* ${lead.nome}\n*Empresa:* ${lead.empresa}\n*Segmento:* ${lead.segmento}\n*Cidade/Estado:* ${lead.cidade}\n*Faturamento médio:* ${lead.faturamento}\n\nGostaria de adiantar meu atendimento para alinharmos a estratégia de tráfego.`;
                         waBtn.href = `https://api.whatsapp.com/send?phone=5575998911748&text=${encodeURIComponent(msg)}`;
@@ -146,5 +146,6 @@
             }
         });
     </script>
+    <script src="./assets/js/main.js"></script>
 </body>
 </html>
