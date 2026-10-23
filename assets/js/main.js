@@ -137,28 +137,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 6. Rastreamento e DataLayer para cliques nos botões de WhatsApp (<button data-href>)
-    //    Usa delegação de evento no document para capturar qualquer .btn-whatsapp,
-    //    incluindo os do obrigado.html que carregam data-href dinamicamente.
+    // 6. Abre o WhatsApp ao clicar nos <button data-href>.
+    //    O GTM captura o clique nativamente via acionador "Todos os Elementos"
+    //    e preenche as variáveis nativas: Click ID, Click Classes, Click Text.
     document.addEventListener('click', function(e) {
         const btn = e.target.closest('.btn-whatsapp');
         if (!btn) return;
 
         const waUrl = btn.getAttribute('data-href') || '';
-        const location = btn.getAttribute('data-location') || 'geral';
-
-        // Push ao dataLayer ANTES de abrir a janela para garantir captura pelo GTM
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-            event: 'whatsapp_click',
-            click_url: waUrl,
-            click_id: btn.id || '',
-            click_class: btn.className || '',
-            click_text: btn.innerText ? btn.innerText.trim() : '',
-            click_location: location
-        });
-
-        // Abre o WhatsApp em nova aba
         if (waUrl) {
             window.open(waUrl, '_blank', 'noopener,noreferrer');
         }
