@@ -137,18 +137,30 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 6. Rastreamento e DataLayer para Cliques em Links de WhatsApp
-    document.querySelectorAll('a[href*="whatsapp.com"], a[href*="api.whatsapp.com"], .btn-whatsapp').forEach(waLink => {
-        waLink.addEventListener('click', function(e) {
-            window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push({
-                event: 'whatsapp_click',
-                click_url: this.href,
-                click_id: this.id || '',
-                click_class: this.className || '',
-                click_text: this.innerText ? this.innerText.trim() : '',
-                click_location: this.getAttribute('data-location') || 'geral'
-            });
+    // 6. Rastreamento e DataLayer para cliques nos botões de WhatsApp (<button data-href>)
+    //    Usa delegação de evento no document para capturar qualquer .btn-whatsapp,
+    //    incluindo os do obrigado.html que carregam data-href dinamicamente.
+    document.addEventListener('click', function(e) {
+        const btn = e.target.closest('.btn-whatsapp');
+        if (!btn) return;
+
+        const waUrl = btn.getAttribute('data-href') || '';
+        const location = btn.getAttribute('data-location') || 'geral';
+
+        // Push ao dataLayer ANTES de abrir a janela para garantir captura pelo GTM
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            event: 'whatsapp_click',
+            click_url: waUrl,
+            click_id: btn.id || '',
+            click_class: btn.className || '',
+            click_text: btn.innerText ? btn.innerText.trim() : '',
+            click_location: location
         });
+
+        // Abre o WhatsApp em nova aba
+        if (waUrl) {
+            window.open(waUrl, '_blank', 'noopener,noreferrer');
+        }
     });
 });

@@ -1064,7 +1064,8 @@ img {
     gap: 16px;
 }
 
-.footer-socials a {
+.footer-socials a,
+.footer-socials button {
     width: 40px;
     height: 40px;
     border-radius: 10px;
@@ -1076,9 +1077,14 @@ img {
     color: var(--color-text-muted);
     font-size: 1.1rem;
     transition: var(--transition);
+    cursor: pointer;
+    box-shadow: none;
+    padding: 0;
+    text-decoration: none;
 }
 
-.footer-socials a:hover {
+.footer-socials a:hover,
+.footer-socials button:hover {
     color: var(--color-accent);
     border-color: var(--color-accent-border);
     transform: translateY(-2px);
