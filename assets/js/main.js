@@ -136,17 +136,5 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.href = 'obrigado.html';
         });
     }
-
-    // 6. Abre o WhatsApp ao clicar nos <button data-href>.
-    //    O GTM captura o clique nativamente via acionador "Todos os Elementos"
-    //    e preenche as variáveis nativas: Click ID, Click Classes, Click Text.
-    document.addEventListener('click', function(e) {
-        const btn = e.target.closest('.btn-whatsapp');
-        if (!btn) return;
-
-        const waUrl = btn.getAttribute('data-href') || '';
-        if (waUrl) {
-            window.open(waUrl, '_blank', 'noopener,noreferrer');
-        }
-    });
 });
+
